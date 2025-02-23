@@ -16,7 +16,7 @@ import {
   Twitter,
 } from "lucide-react";
 
-export default function PersonalPortfolio() {
+export default function AboutMe() {
   const [activeProject, setActiveProject] = useState(0);
 
   const projects = [
