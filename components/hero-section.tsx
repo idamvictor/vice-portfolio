@@ -43,6 +43,7 @@ const socialLinks = [
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 300], [0, -100]);
@@ -140,7 +141,7 @@ export default function HeroSection() {
               transition={{ delay: 0.8 }}
               className="flex gap-4"
             >
-              {socialLinks.map((social, index) => (
+              {socialLinks.map((social) => (
                 <motion.a
                   key={social.label}
                   href={social.href}

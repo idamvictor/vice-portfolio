@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 interface Brand {
   id: number;
@@ -168,10 +169,11 @@ export default function BrandShowcase() {
                       ease: "easeOut",
                     }}
                   >
-                    <img
+                    <Image
                       src={brand.logo || "/placeholder.svg"}
                       alt={brand.name}
                       className="h-full w-full object-contain"
+                      fill
                     />
                   </motion.div>
                 </div>
