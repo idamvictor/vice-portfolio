@@ -16,7 +16,7 @@ const brands: Brand[] = [
   {
     id: 1,
     name: "Google",
-    logo: "/placeholder.svg?height=120&width=120",
+    logo: "https://res.cloudinary.com/dyp8gtllq/image/upload/v1740652807/Google_2011_logo-600x206_nilxnl.png",
     description: "Search Engine Optimization Project",
     year: "2023",
   },

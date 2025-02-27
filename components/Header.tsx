@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Home, User, Code, Briefcase, Mail } from "lucide-react";
@@ -8,13 +8,16 @@ import { cn } from "@/lib/utils";
 import { ModeToggle } from "./ModeToggle";
 
 export default function Header() {
-  const navItems = [
-    { name: "Home", url: "/", icon: Home },
-    { name: "About", url: "#", icon: User },
-    { name: "Skills", url: "#", icon: Code },
-    { name: "Portfolio", url: "#", icon: Briefcase },
-    { name: "Contact", url: "#", icon: Mail },
-  ];
+  const navItems = useMemo(
+    () => [
+      { name: "Home", url: "/", icon: Home },
+      { name: "About", url: "#", icon: User },
+      { name: "Skills", url: "#", icon: Code },
+      { name: "Portfolio", url: "#", icon: Briefcase },
+      { name: "Contact", url: "#", icon: Mail },
+    ],
+    []
+  );
 
   const [activeTab, setActiveTab] = useState(navItems[0].name);
   const [isMobile, setIsMobile] = useState(false);
@@ -34,13 +37,13 @@ export default function Header() {
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []); // Removed navItems from dependencies
+  }, [navItems]); // Added navItems to dependencies
 
   return (
     <header className="w-full">
       <div className="max-w-6xl mx-auto px-4 flex items-center h-16 justify-between">
         <Link href="/" className="text-2xl font-bold">
-          Vice<span className="text-orange-500">.</span>
+          Jack<span className="text-orange-500">.</span>
         </Link>
 
         <div className="flex items-center">
@@ -48,8 +51,8 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:mt-6">
-        <div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+      <div className="fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:mt-6 pointer-events-none">
+        <div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg pointer-events-auto">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeTab === item.name;
