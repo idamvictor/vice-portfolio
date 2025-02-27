@@ -194,7 +194,7 @@ export default function HeroSection() {
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                className="relative aspect-square overflow-hidden rounded-full bg-gradient-to-br from-zinc-200 to-zinc-100 p-2 dark:from-zinc-800 dark:to-zinc-900"
+                className="relative aspect-square overflow-hidden rounded-full bg-gradient-to-br from-zinc-200 to-zinc-100  dark:from-zinc-800 dark:to-zinc-900"
               >
                 {/* Animated background */}
                 <motion.div
@@ -213,13 +213,13 @@ export default function HeroSection() {
                     ease: "linear",
                   }}
                 />
-                <div className="relative z-10 h-full w-full overflow-hidden rounded-full bg-gradient-to-br from-zinc-100 to-white p-4 dark:from-zinc-900 dark:to-zinc-800">
+                <div className="relative z-10 h-full w-full overflow-hidden rounded-full bg-gradient-to-br from-zinc-100 to-white dark:from-zinc-900 dark:to-zinc-800">
                   <Image
-                    src="https://res.cloudinary.com/dyp8gtllq/image/upload/v1740053198/man-with-glasses-blue-shirt-standing-with-his-arms-crossed-transparent-background_838900-93620_xrsq9b.jpg"
+                    src="https://res.cloudinary.com/dyp8gtllq/image/upload/v1740645943/idam_3d_xkcafl.png"
                     alt="Profile"
                     width={600}
                     height={600}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover object-center"
                     priority
                   />
                 </div>
