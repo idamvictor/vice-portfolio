@@ -20,6 +20,7 @@ export default function Header() {
   );
 
   const [activeTab, setActiveTab] = useState(navItems[0].name);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
