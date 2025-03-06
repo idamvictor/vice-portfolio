@@ -3,6 +3,7 @@ import BrandShowcase from "@/components/brand-showcase";
 import HeroSection from "@/components/hero-section";
 import PortfolioSection from "@/components/Portfolio-section";
 import SkillsSection from "@/components/skills-section";
+import TestimonialCarouselDemo, { TestimonialCarousel } from "@/components/testimonial-carousel";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <AboutMe />
       <SkillsSection />
       <PortfolioSection />
+      <TestimonialCarouselDemo />
     </>
   );
 }
