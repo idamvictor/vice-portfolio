@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Hexagon, Github, Twitter } from "lucide-react";
+import Link from "next/link";
 import type * as React from "react";
 
 interface FooterProps {
@@ -68,14 +69,14 @@ export function Footer({
     <footer className="pb-6 pt-16 lg:pb-8 lg:pt-24">
       <div className="px-4 lg:px-8">
         <div className="md:flex md:items-start md:justify-between">
-          <a
+          <Link
             href="/"
             className="flex items-center gap-x-2"
             aria-label={brandName}
           >
             {logo}
             <span className="font-bold text-xl">{brandName}</span>
-          </a>
+          </Link>
           <ul className="flex list-none mt-6 md:mt-0 space-x-3">
             {socialLinks.map((link, i) => (
               <li key={i}>
@@ -85,14 +86,14 @@ export function Footer({
                   className="h-10 w-10 rounded-full"
                   asChild
                 >
-                  <a
+                  <Link
                     href={link.href}
                     target="_blank"
                     aria-label={link.label}
                     rel="noreferrer"
                   >
                     {link.icon}
-                  </a>
+                  </Link>
                 </Button>
               </li>
             ))}
@@ -103,12 +104,12 @@ export function Footer({
             <ul className="list-none flex flex-wrap -my-1 -mx-2 lg:justify-end">
               {mainLinks.map((link, i) => (
                 <li key={i} className="my-1 mx-2 shrink-0">
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-primary underline-offset-4 hover:underline"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -117,12 +118,12 @@ export function Footer({
             <ul className="list-none flex flex-wrap -my-1 -mx-3 lg:justify-end">
               {legalLinks.map((link, i) => (
                 <li key={i} className="my-1 mx-3 shrink-0">
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-muted-foreground underline-offset-4 hover:underline"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

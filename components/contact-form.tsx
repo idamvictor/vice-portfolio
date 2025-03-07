@@ -53,9 +53,10 @@ export default function ContactForm() {
       await sendEmail(values);
       form.reset();
       toast.success("Email has been sent", {
-          description: "Sunday, December 03, 2023 at 9:00 AM",}
-          );
+        description: "Sunday, December 03, 2023 at 9:00 AM",
+      });
     } catch (error) {
+      console.error("Error sending email:", error);
       toast.error("Failed to send email", {
         description: "Sunday, December 03, 2023 at 9:00 AM",
       });
@@ -77,13 +78,13 @@ export default function ContactForm() {
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16">
           <div className="inline-block mb-4 px-4 py-1.5 bg-primary/10 rounded-full text-primary text-sm font-medium">
-            Let's Connect
+            Let&apos;s Connect
           </div>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Get In Touch
           </h2>
           <p className="text-muted-foreground max-w-md mx-auto text-lg">
-            Have a project in mind or just want to say hello? I'd love to hear
+            Have a project in mind or just want to say hello? I&apos;d love to hear
             from you!
           </p>
         </div>

@@ -168,8 +168,8 @@ export default function PortfolioSection() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">My Portfolio</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Explore my recent projects and see how I've helped clients transform their ideas into elegant, scalable
-            solutions.
+            Explore my recent projects and see how I&apos;ve helped clients
+            transform their ideas into elegant, scalable solutions.
           </p>
         </motion.div>
 
@@ -182,7 +182,12 @@ export default function PortfolioSection() {
         >
           <div className="relative">
             <div className="absolute inset-0 bg-white/30 backdrop-blur-md rounded-full" />
-            <Tabs defaultValue="all" value={activeFilter} onValueChange={handleFilterChange} className="relative">
+            <Tabs
+              defaultValue="all"
+              value={activeFilter}
+              onValueChange={handleFilterChange}
+              className="relative"
+            >
               <TabsList className="h-auto p-1 bg-white/50 backdrop-blur-md border border-white/20 shadow-sm rounded-full flex flex-wrap justify-center">
                 {filterOptions.map((option) => (
                   <motion.div
@@ -240,15 +245,24 @@ export default function PortfolioSection() {
                   >
                     {project.title}
                   </motion.h3>
-                  <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+                  <p className="text-gray-600 text-sm mb-4">
+                    {project.description}
+                  </p>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
-                      <motion.div key={tech} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+                      <motion.div
+                        key={tech}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
                         <Badge
                           variant="secondary"
                           className="text-xs font-normal transition-all duration-200 hover:bg-gray-200"
                         >
-                          {filterOptions.find((option) => option.id === tech)?.label}
+                          {
+                            filterOptions.find((option) => option.id === tech)
+                              ?.label
+                          }
                         </Badge>
                       </motion.div>
                     ))}
@@ -281,15 +295,24 @@ export default function PortfolioSection() {
 
         {/* Empty state when no projects match filter */}
         {filteredProjects.length === 0 && (
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center py-12">
-            <p className="text-gray-500">No projects found with the selected filter.</p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center py-12"
+          >
+            <p className="text-gray-500">
+              No projects found with the selected filter.
+            </p>
           </motion.div>
         )}
 
         {/* Project detail modal using shadcn Dialog */}
         <AnimatePresence>
           {selectedProject && (
-            <Dialog open={!!selectedProject} onOpenChange={(open) => !open && setSelectedProject(null)}>
+            <Dialog
+              open={!!selectedProject}
+              onOpenChange={(open) => !open && setSelectedProject(null)}
+            >
               <DialogContent className="sm:max-w-3xl max-h-[90vh] overflow-y-auto p-0">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -310,12 +333,16 @@ export default function PortfolioSection() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 }}
                     >
-                      <h2 className="text-2xl font-bold text-white">{selectedProject.title}</h2>
+                      <h2 className="text-2xl font-bold text-white">
+                        {selectedProject.title}
+                      </h2>
                     </motion.div>
                   </div>
                   <div className="p-6">
                     <DialogHeader>
-                      <DialogTitle className="text-2xl font-bold sr-only">{selectedProject.title}</DialogTitle>
+                      <DialogTitle className="text-2xl font-bold sr-only">
+                        {selectedProject.title}
+                      </DialogTitle>
                       <motion.div
                         className="flex flex-wrap gap-2 mt-2"
                         initial={{ opacity: 0 }}
@@ -329,8 +356,15 @@ export default function PortfolioSection() {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.3 + index * 0.1 }}
                           >
-                            <Badge variant="secondary" className="text-xs font-normal">
-                              {filterOptions.find((option) => option.id === tech)?.label}
+                            <Badge
+                              variant="secondary"
+                              className="text-xs font-normal"
+                            >
+                              {
+                                filterOptions.find(
+                                  (option) => option.id === tech
+                                )?.label
+                              }
                             </Badge>
                           </motion.div>
                         ))}
@@ -344,15 +378,21 @@ export default function PortfolioSection() {
                       transition={{ delay: 0.4 }}
                     >
                       <div className="bg-gray-50 p-3 rounded-lg">
-                        <h4 className="text-sm font-semibold text-gray-500">Client</h4>
+                        <h4 className="text-sm font-semibold text-gray-500">
+                          Client
+                        </h4>
                         <p>{selectedProject.client}</p>
                       </div>
                       <div className="bg-gray-50 p-3 rounded-lg">
-                        <h4 className="text-sm font-semibold text-gray-500">Duration</h4>
+                        <h4 className="text-sm font-semibold text-gray-500">
+                          Duration
+                        </h4>
                         <p>{selectedProject.duration}</p>
                       </div>
                       <div className="bg-gray-50 p-3 rounded-lg">
-                        <h4 className="text-sm font-semibold text-gray-500">Role</h4>
+                        <h4 className="text-sm font-semibold text-gray-500">
+                          Role
+                        </h4>
                         <p>{selectedProject.role}</p>
                       </div>
                     </motion.div>
@@ -367,15 +407,23 @@ export default function PortfolioSection() {
                       </DialogDescription>
 
                       {selectedProject.link && (
-                        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                          <Button asChild className="rounded-full group relative overflow-hidden">
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <Button
+                            asChild
+                            className="rounded-full group relative overflow-hidden"
+                          >
                             <a
                               href={selectedProject.link}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="transition-all duration-300"
                             >
-                              <span className="relative z-10">View Project</span>
+                              <span className="relative z-10">
+                                View Project
+                              </span>
                               <span className="absolute inset-0 bg-primary-foreground/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
                             </a>
                           </Button>
@@ -390,6 +438,6 @@ export default function PortfolioSection() {
         </AnimatePresence>
       </div>
     </section>
-  )
+  );
 }
 

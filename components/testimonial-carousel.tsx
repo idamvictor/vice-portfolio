@@ -4,6 +4,7 @@ import * as React from "react"
 import { motion, type PanInfo } from "framer-motion"
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
+import Image from "next/image"
 
 // Utility function
 function cn(...inputs: ClassValue[]) {
@@ -29,22 +30,27 @@ const TESTIMONIAL_DATA: Testimonial[] = [
   {
     id: 1,
     name: "John Doe",
-    avatar: "https://randomuser.me/api/portraits/men/1.jpg",
-    description: "Amazing experience working with this team! The results exceeded my expectations.",
+    avatar:
+      "https://res.cloudinary.com/dyp8gtllq/image/upload/v1740645943/idam_3d_xkcafl.png",
+    description:
+      "Amazing experience working with this team! The results exceeded my expectations.",
   },
   {
     id: 2,
     name: "Jane Smith",
-    avatar: "https://randomuser.me/api/portraits/women/1.jpg",
+    avatar:
+      "https://res.cloudinary.com/dyp8gtllq/image/upload/v1740645943/idam_3d_xkcafl.png",
     description: "Highly recommended! Great service and professional approach.",
   },
   {
     id: 3,
     name: "Mike Johnson",
-    avatar: "https://randomuser.me/api/portraits/men/2.jpg",
-    description: "Exceptional quality and professionalism. Would definitely work with them again.",
+    avatar:
+      "https://res.cloudinary.com/dyp8gtllq/image/upload/v1740645943/idam_3d_xkcafl.png",
+    description:
+      "Exceptional quality and professionalism. Would definitely work with them again.",
   },
-]
+];
 
 // Component
 const TestimonialCarousel = React.forwardRef<HTMLDivElement, TestimonialCarouselProps>(
@@ -118,10 +124,12 @@ const TestimonialCarousel = React.forwardRef<HTMLDivElement, TestimonialCarousel
                 )}
 
                 <div className="p-6 flex flex-col items-center gap-4">
-                  <img
+                  <Image
                     src={testimonial.avatar || "/placeholder.svg"}
                     alt={testimonial.name}
                     className="w-16 h-16 rounded-full object-cover"
+                    width={16}
+                    height={16}
                   />
                   <h3 className="text-lg font-semibold text-gray-800 dark:text-foreground">{testimonial.name}</h3>
                   <p className="text-center text-sm text-gray-600 dark:text-muted-foreground">
