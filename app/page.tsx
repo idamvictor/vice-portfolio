@@ -5,6 +5,7 @@ import { IconCloud, IconCloudDemo } from "@/components/icon-cloud";
 import PortfolioSection from "@/components/Portfolio-section";
 import SkillsSection from "@/components/skills-section";
 import TestimonialCarouselDemo from "@/components/testimonial-carousel";
+import { Timeline } from "@/components/timeline";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <TestimonialCarouselDemo />
         <IconCloudDemo />
       </div>
+      <Timeline />
     </>
   );
 }
