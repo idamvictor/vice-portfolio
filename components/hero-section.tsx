@@ -51,7 +51,7 @@ export default function HeroSection() {
   return (
     <div
       ref={containerRef}
-      className="relative min-h-screen overflow-hidden bg-zinc-100 dark:bg-zinc-900"
+      className="relative min-h-[90vh] overflow-hidden bg-background"
     >
       {/* Animated background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -65,8 +65,8 @@ export default function HeroSection() {
             }%, rgba(56, 189, 248, 0.1) 0%, rgba(232, 121, 249, 0.1) 50%, rgba(0, 0, 0, 0) 100%)`,
           }}
         />
-        <div className="absolute -left-[10%] top-[20%] h-[300px] w-[300px] animate-pulse rounded-full bg-blue-500/20 blur-[120px]" />
-        <div className="absolute -right-[10%] top-[10%] h-[300px] w-[300px] animate-pulse rounded-full bg-purple-500/20 blur-[120px]" />
+        <div className="absolute -left-[10%] top-[20%] h-[300px] w-[300px] animate-pulse rounded-full bg-primary/20 blur-[120px]" />
+        <div className="absolute -right-[10%] top-[10%] h-[300px] w-[300px] animate-pulse rounded-full bg-secondary/20 blur-[120px]" />
       </div>
 
       {/* Main content */}
@@ -87,18 +87,18 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex rounded-full bg-blue-500/10 px-4 py-1.5 text-sm font-medium text-blue-500 dark:bg-blue-500/20"
+                className="inline-flex rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary"
               >
                 Available for hire
               </motion.div>
-              <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-5xl lg:text-6xl">
+              <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
                 Full Stack Developer
               </h1>
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className="max-w-3xl text-lg text-zinc-600 dark:text-zinc-400"
+                className="max-w-3xl text-lg text-muted-foreground"
               >
                 Transforming ideas into elegant, scalable solutions. Specialized
                 in building modern web applications with cutting-edge
@@ -116,11 +116,11 @@ export default function HeroSection() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative overflow-hidden rounded-full bg-zinc-900 px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+                className="group relative overflow-hidden rounded-full bg-foreground px-8 py-3 text-sm font-medium text-background hover:text-foreground transition-colors hover:bg-muted"
               >
                 <span className="relative z-10">View Projects</span>
                 <motion.div
-                  className="absolute inset-0 z-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 transition-opacity group-hover:opacity-20"
+                  className="absolute inset-0 z-0 bg-gradient-to-r from-primary to-secondary opacity-0 transition-opacity group-hover:opacity-20"
                   initial={false}
                   whileHover={{ scale: 1.5, rotate: 12 }}
                 />
@@ -128,7 +128,7 @@ export default function HeroSection() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group rounded-full border border-zinc-200 px-8 py-3 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-100 dark:border-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-800"
+                className="group rounded-full border border-muted-foreground px-8 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
               >
                 Contact Me
               </motion.button>
@@ -147,7 +147,7 @@ export default function HeroSection() {
                   href={social.href}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-zinc-100 text-zinc-600 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-muted text-foreground transition-colors hover:bg-muted"
                 >
                   <social.icon className="h-5 w-5" />
                   <span className="sr-only">{social.label}</span>
@@ -187,14 +187,14 @@ export default function HeroSection() {
                     ease: "easeInOut",
                   },
                 }}
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-20 blur-2xl"
+                className="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-secondary opacity-20 blur-2xl"
               />
 
               {/* Profile image container with animated background */}
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                className="relative aspect-square overflow-hidden rounded-full bg-gradient-to-br from-zinc-200 to-zinc-100  dark:from-zinc-800 dark:to-zinc-900"
+                className="relative aspect-square overflow-hidden rounded-full bg-gradient-to-br from-muted to-muted"
               >
                 {/* Animated background */}
                 <motion.div
@@ -213,7 +213,7 @@ export default function HeroSection() {
                     ease: "linear",
                   }}
                 />
-                <div className="relative z-10 h-full w-full overflow-hidden rounded-full bg-gradient-to-br from-zinc-100 to-white dark:from-zinc-900 dark:to-zinc-800">
+                <div className="relative z-10 h-full w-full overflow-hidden rounded-full bg-gradient-to-br from-muted to-muted">
                   <Image
                     src="https://res.cloudinary.com/dyp8gtllq/image/upload/v1740645943/idam_3d_xkcafl.png"
                     alt="Profile"
@@ -276,15 +276,15 @@ export default function HeroSection() {
                       Item.color
                     )}
                   >
-                    <div className="flex h-full w-full items-center justify-center rounded-xl bg-white/90 transition-colors group-hover:bg-white/80 dark:bg-zinc-900/90 dark:group-hover:bg-zinc-900/80">
-                      <Item.icon className="h-6 w-6 text-zinc-900 transition-transform group-hover:scale-110 dark:text-zinc-100" />
+                    <div className="flex h-full w-full items-center justify-center rounded-xl bg-background transition-colors group-hover:bg-muted">
+                      <Item.icon className="h-6 w-6 text-foreground transition-transform group-hover:scale-110" />
                     </div>
                   </motion.div>
                   <motion.span
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6 + index * 0.1 }}
-                    className="rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-zinc-900 shadow-sm backdrop-blur-md dark:bg-zinc-800/80 dark:text-zinc-100"
+                    className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-foreground shadow-sm backdrop-blur-md"
                   >
                     {Item.label}
                   </motion.span>
@@ -306,17 +306,15 @@ export default function HeroSection() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
-            className="h-6 w-4 rounded-full border-2 border-zinc-600 dark:border-zinc-400"
+            className="h-6 w-4 rounded-full border-2 border-muted-foreground"
           >
             <motion.div
               animate={{ height: ["20%", "80%", "20%"] }}
               transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
-              className="mx-auto h-2 w-1 rounded-full bg-zinc-600 dark:bg-zinc-400"
+              className="mx-auto h-2 w-1 rounded-full bg-muted-foreground"
             />
           </motion.div>
-          <span className="text-sm text-zinc-600 dark:text-zinc-400">
-            Scroll
-          </span>
+          <span className="text-sm text-muted-foreground">Scroll</span>
         </div>
       </motion.div>
     </div>

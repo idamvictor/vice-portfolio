@@ -53,7 +53,7 @@ export default function Header() {
       </div>
 
       <div className="fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:mt-6 pointer-events-none">
-        <div className="flex items-center gap-3 bg-background border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg pointer-events-auto">
+        <div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg pointer-events-auto">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeTab === item.name;
