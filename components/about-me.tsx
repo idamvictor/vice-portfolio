@@ -24,17 +24,20 @@ export default function AboutMe() {
       title: "Project Alpha",
       description:
         "A cutting-edge web application built with React and Node.js",
-      image: "/placeholder.svg?height=200&width=300",
+      image:
+        "https://res.cloudinary.com/dyp8gtllq/image/upload/v1737075755/cld-sample.jpg",
     },
     {
       title: "Design System Beta",
       description: "A comprehensive design system for scalable applications",
-      image: "/placeholder.svg?height=200&width=300",
+      image:
+        "https://res.cloudinary.com/dyp8gtllq/image/upload/v1737075755/cld-sample.jpg",
     },
     {
       title: "Gamma Mobile App",
       description: "An innovative mobile app developed with React Native",
-      image: "/placeholder.svg?height=200&width=300",
+      image:
+        "https://res.cloudinary.com/dyp8gtllq/image/upload/v1737075755/cld-sample.jpg",
     },
   ];
 
@@ -48,11 +51,11 @@ export default function AboutMe() {
   }, [controls, inView]);
 
   return (
-    <div className="min-h-screen bg-white text-gray-800 p-8 relative overflow-hidden">
+    <div className="min-h-screen bg-background text-foreground p-8 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-purple-100 opacity-50"
+          className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary opacity-50"
           animate={{
             scale: [1, 1.2, 1],
             rotate: [0, 90, 0],
@@ -64,7 +67,7 @@ export default function AboutMe() {
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-48 h-48 rounded-full bg-blue-100 opacity-50"
+          className="absolute bottom-1/4 right-1/4 w-48 h-48 rounded-full bg-secondary opacity-50"
           animate={{
             scale: [1, 1.3, 1],
             rotate: [0, -90, 0],
@@ -93,11 +96,11 @@ export default function AboutMe() {
               width={150}
               height={150}
               alt="Your Name"
-              className="rounded-full mx-auto mb-6 border-4 border-purple-400 shadow-lg"
+              className="rounded-full mx-auto mb-6 border-4 border-primary shadow-lg"
             />
           </motion.div>
-          <h1 className="text-5xl font-bold mb-4 text-gray-900">Your Name</h1>
-          <p className="text-xl text-gray-600">
+          <h1 className="text-5xl font-bold mb-4 text-foreground">Your Name</h1>
+          <p className="text-xl text-muted-foreground">
             Full-Stack Developer & UI/UX Enthusiast
           </p>
         </motion.header>
@@ -115,14 +118,14 @@ export default function AboutMe() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <motion.div
-              className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-2xl p-8 shadow-xl border border-gray-200"
+              className="bg-card bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-2xl p-8 shadow-xl border border-border"
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
             >
-              <h2 className="text-3xl font-semibold mb-4 text-gray-800">
+              <h2 className="text-3xl font-semibold mb-4 text-foreground">
                 About Me
               </h2>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 I&apos;m a passionate developer with a keen eye for design. My
                 journey in tech started 5 years ago, and since then, I&apos;ve
                 been crafting digital experiences that blend functionality with
@@ -132,12 +135,12 @@ export default function AboutMe() {
             </motion.div>
 
             <motion.div
-              className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-2xl p-8 shadow-xl border border-gray-200 relative overflow-hidden"
+              className="bg-card bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-2xl p-8 shadow-xl border border-border relative overflow-hidden"
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
             >
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-purple-200 rounded-full opacity-50 blur-2xl"></div>
-              <h2 className="text-3xl font-semibold mb-4 text-gray-800">
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary opacity-50 blur-2xl"></div>
+              <h2 className="text-3xl font-semibold mb-4 text-foreground">
                 Featured Project
               </h2>
               <motion.div
@@ -154,10 +157,10 @@ export default function AboutMe() {
                   alt={projects[activeProject].title}
                   className="w-full h-48 object-cover rounded-lg shadow-md"
                 />
-                <h3 className="text-2xl font-semibold text-gray-700">
+                <h3 className="text-2xl font-semibold text-foreground">
                   {projects[activeProject].title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-muted-foreground">
                   {projects[activeProject].description}
                 </p>
                 <div className="flex justify-between items-center mt-4">
@@ -167,7 +170,7 @@ export default function AboutMe() {
                         (prev) => (prev - 1 + projects.length) % projects.length
                       )
                     }
-                    className="text-purple-500 hover:text-purple-700"
+                    className="text-primary hover:text-primary-foreground"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -178,9 +181,7 @@ export default function AboutMe() {
                       <motion.div
                         key={index}
                         className={`w-2 h-2 rounded-full ${
-                          index === activeProject
-                            ? "bg-purple-500"
-                            : "bg-gray-300"
+                          index === activeProject ? "bg-primary" : "bg-muted"
                         }`}
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
@@ -192,7 +193,7 @@ export default function AboutMe() {
                     onClick={() =>
                       setActiveProject((prev) => (prev + 1) % projects.length)
                     }
-                    className="text-purple-500 hover:text-purple-700"
+                    className="text-primary hover:text-primary-foreground"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -215,11 +216,11 @@ export default function AboutMe() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <motion.div
-              className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-gray-200"
+              className="bg-card bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-border"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
             >
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+              <h3 className="text-2xl font-semibold mb-4 text-foreground">
                 Skills
               </h3>
               <ul className="space-y-4">
@@ -237,7 +238,7 @@ export default function AboutMe() {
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     whileHover={{ x: 5, color: "#9333ea" }}
                   >
-                    <ChevronRight className="text-purple-500" />
+                    <ChevronRight className="text-primary" />
                     <span>{skill}</span>
                   </motion.li>
                 ))}
@@ -245,11 +246,11 @@ export default function AboutMe() {
             </motion.div>
 
             <motion.div
-              className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-gray-200"
+              className="bg-card bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-border"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300, damping: 10 }}
             >
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+              <h3 className="text-2xl font-semibold mb-4 text-foreground">
                 What I Do
               </h3>
               <div className="space-y-4">
@@ -266,8 +267,8 @@ export default function AboutMe() {
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     whileHover={{ scale: 1.05, x: 5 }}
                   >
-                    <item.icon className="text-purple-500" />
-                    <span className="text-gray-700">{item.label}</span>
+                    <item.icon className="text-primary" />
+                    <span className="text-foreground">{item.label}</span>
                   </motion.div>
                 ))}
               </div>
@@ -281,7 +282,7 @@ export default function AboutMe() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <h2 className="text-3xl font-semibold mb-8 text-gray-800">
+          <h2 className="text-3xl font-semibold mb-8 text-foreground">
             Get In Touch
           </h2>
           <div className="flex justify-center space-x-6">
@@ -296,7 +297,7 @@ export default function AboutMe() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-purple-500"
+                className="text-muted-foreground hover:text-primary"
                 whileHover={{ y: -5, scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
