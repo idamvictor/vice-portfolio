@@ -17,13 +17,17 @@ export default function Home() {
       <AboutMe />
       <SkillsSection />
       <PortfolioSection />
-      <div className="md:flex gap-2">
-        <TestimonialCarouselDemo />
-        <IconCloudDemo />
+      <div className="md:flex gap-2 container mx-auto px-4 py-8 items-center justify-around">
+        <div>
+          <TestimonialCarouselDemo />
+        </div>
+        <div>
+          <IconCloudDemo />
+        </div>
       </div>
       <Timeline />
-      <ContactForm/>
-      <SonnerProvider/>
+      <ContactForm />
+      <SonnerProvider />
     </>
   );
 }
