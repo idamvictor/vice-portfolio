@@ -269,7 +269,7 @@ export default function HeroSection() {
             {techStack.map((Item, index) => {
               const angle = (index * 2 * Math.PI) / techStack.length;
               const radius = 45; // Percentage from center
-              const x = 40 + radius * Math.cos(angle);
+              const x = 37 + radius * Math.cos(angle);
               const y = 40 + radius * Math.sin(angle);
 
               return (
