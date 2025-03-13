@@ -7,38 +7,71 @@ import Image from "next/image";
 import { useRef } from "react";
 import {
   CodeIcon,
-  DatabaseIcon,
-  GlobeIcon,
   LayoutIcon,
   ServerIcon,
   SmartphoneIcon,
   Github,
   Twitter,
   Linkedin,
+  Instagram,
 } from "lucide-react";
+import { SiSupabase } from "react-icons/si";
+import { TbBrandTypescript, TbBrandNextjs } from "react-icons/tb";
+import { FaReact } from "react-icons/fa";
+
+
+
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const techStack = [
-  { icon: CodeIcon, label: "Frontend", color: "from-blue-500 to-cyan-500" },
-  { icon: ServerIcon, label: "Backend", color: "from-purple-500 to-pink-500" },
   {
-    icon: DatabaseIcon,
-    label: "Database",
+    icon: TbBrandTypescript,
+    label: "Typescript",
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    icon: TbBrandNextjs,
+    label: "Nextjs",
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    icon: ServerIcon,
+    label: "Backend & APIs",
+    color: "from-purple-500 to-pink-500",
+  },
+  {
+    icon: SiSupabase,
+    label: "Supabase",
     color: "from-orange-500 to-red-500",
   },
-  { icon: GlobeIcon, label: "API", color: "from-green-500 to-emerald-500" },
-  { icon: LayoutIcon, label: "UI/UX", color: "from-violet-500 to-indigo-500" },
   {
     icon: SmartphoneIcon,
-    label: "Mobile",
-    color: "from-yellow-500 to-amber-500",
+    label: "Responsiveness",
+    color: "from-violet-500 to-indigo-500",
   },
+  {
+    icon: LayoutIcon,
+    label: "UI/UX",
+    color: "from-violet-500 to-indigo-500",
+  },
+
+  { icon: FaReact, label: "React", color: "from-cyan-500 to-blue-500" },
 ];
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/idamvictor", label: "GitHub" },
+  { icon: Twitter, href: "https://x.com/idam_victor_x1", label: "Twitter" },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/victor-idam/",
+    label: "LinkedIn",
+  },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/idamvictorx1/",
+    label: "Instagram",
+  },
 ];
 
 export default function HeroSection() {
@@ -50,7 +83,7 @@ export default function HeroSection() {
 
   return (
     <div
-    id="home"
+      id="home"
       ref={containerRef}
       className="relative min-h-[90vh] overflow-hidden bg-background"
     >
@@ -93,7 +126,7 @@ export default function HeroSection() {
                 Available for hire
               </motion.div>
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                Full Stack Developer
+                Front-End Developer
               </h1>
               <motion.p
                 initial={{ opacity: 0 }}
@@ -119,20 +152,24 @@ export default function HeroSection() {
                 whileTap={{ scale: 0.95 }}
                 className="group relative overflow-hidden rounded-full bg-foreground px-8 py-3 text-sm font-medium text-background hover:text-foreground transition-colors hover:bg-muted"
               >
-                <span className="relative z-10">View Projects</span>
+                <Link href="#portfolio" className="relative z-10">
+                  View Projects
+                </Link>
                 <motion.div
                   className="absolute inset-0 z-0 bg-gradient-to-r from-primary to-secondary opacity-0 transition-opacity group-hover:opacity-20"
                   initial={false}
                   whileHover={{ scale: 1.5, rotate: 12 }}
                 />
               </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group rounded-full border border-muted-foreground px-8 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
-              >
-                Contact Me
-              </motion.button>
+              <Link href="#contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group rounded-full border border-muted-foreground px-8 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                >
+                  Contact Me
+                </motion.button>
+              </Link>
             </motion.div>
 
             {/* Social Links */}
@@ -146,6 +183,7 @@ export default function HeroSection() {
                 <motion.a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-muted text-foreground transition-colors hover:bg-muted"
@@ -230,9 +268,9 @@ export default function HeroSection() {
             {/* Floating Tech Stack */}
             {techStack.map((Item, index) => {
               const angle = (index * 2 * Math.PI) / techStack.length;
-              const radius = 42; // Percentage from center
-              const x = 50 + radius * Math.cos(angle);
-              const y = 50 + radius * Math.sin(angle);
+              const radius = 45; // Percentage from center
+              const x = 40 + radius * Math.cos(angle);
+              const y = 40 + radius * Math.sin(angle);
 
               return (
                 <motion.div
