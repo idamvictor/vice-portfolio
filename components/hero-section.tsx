@@ -50,6 +50,7 @@ export default function HeroSection() {
 
   return (
     <div
+    id="home"
       ref={containerRef}
       className="relative min-h-[90vh] overflow-hidden bg-background"
     >

@@ -171,6 +171,7 @@ export const Timeline = () => {
 
   return (
     <div
+    id="experience"
       className="w-full bg-background text-foreground font-sans md:px-10"
       ref={containerRef}
     >

@@ -3,18 +3,19 @@
 import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Home, User, Code, Briefcase, Mail } from "lucide-react";
+import { Home, User, Code, Folder, Briefcase, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "./ModeToggle";
 
 export default function Header() {
   const navItems = useMemo(
     () => [
-      { name: "Home", url: "/", icon: Home },
-      { name: "About", url: "#", icon: User },
-      { name: "Skills", url: "#", icon: Code },
-      { name: "Portfolio", url: "#", icon: Briefcase },
-      { name: "Contact", url: "#", icon: Mail },
+      { name: "Home", url: "#home", icon: Home },
+      { name: "About", url: "#about", icon: User },
+      { name: "Skills", url: "#skills", icon: Code },
+      { name: "Portfolio", url: "#portfolio", icon: Folder },
+      { name: "Experience", url: "#experience", icon: Briefcase },
+      { name: "Contact", url: "#contact", icon: Mail },
     ],
     []
   );
@@ -44,7 +45,7 @@ export default function Header() {
     <header className="w-full">
       <div className="max-w-6xl mx-auto px-4 flex items-center h-24 justify-between">
         <Link href="/" className="text-2xl font-bold">
-          Jack<span className="text-primary">.</span>
+          Vice<span className="text-primary">.</span>
         </Link>
 
         <div className="flex items-center">
@@ -64,7 +65,7 @@ export default function Header() {
                 href={item.url}
                 onClick={() => setActiveTab(item.name)}
                 className={cn(
-                  "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
+                  "relative cursor-pointer text-sm font-semibold px-4 py-2 rounded-full transition-colors",
                   "text-foreground/80 hover:text-primary",
                   isActive && "bg-muted text-primary"
                 )}

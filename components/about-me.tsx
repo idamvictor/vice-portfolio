@@ -51,7 +51,7 @@ export default function AboutMe() {
   }, [controls, inView]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground p-8 relative overflow-hidden">
+    <div id="about" className="min-h-screen bg-background text-foreground p-8 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <motion.div

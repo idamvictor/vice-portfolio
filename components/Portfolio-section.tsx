@@ -187,7 +187,7 @@ export default function PortfolioSection() {
   };
 
   return (
-    <section className="py-16 px-4 md:px-6 bg-background">
+    <section id="portfolio" className="py-16 px-4 md:px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
