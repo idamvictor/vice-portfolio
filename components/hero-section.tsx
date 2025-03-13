@@ -311,11 +311,11 @@ export default function HeroSection() {
                   <motion.div
                     whileHover={{ scale: 1.2, rotate: [0, -10, 10, 0] }}
                     className={cn(
-                      "group flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br p-[1px]",
+                      "group flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br/40 p-[1px]",
                       Item.color
                     )}
                   >
-                    <div className="flex h-full w-full items-center justify-center rounded-xl bg-background transition-colors group-hover:bg-muted">
+                    <div className="flex h-full w-full items-center justify-center rounded-xl bg-background/40 backdrop-blur-sm transition-colors group-hover:bg-muted">
                       <Item.icon className="h-6 w-6 text-foreground transition-transform group-hover:scale-110" />
                     </div>
                   </motion.div>
