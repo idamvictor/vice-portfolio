@@ -22,31 +22,31 @@ const brands: Brand[] = [
   },
   {
     id: 2,
-    name: "Microsoft",
-    logo: "/placeholder.svg?height=120&width=120",
-    description: "Cloud Infrastructure Development",
-    year: "2022",
+    name: "Tenece",
+    logo: "https://res.cloudinary.com/dyp8gtllq/image/upload/v1741907971/teneceee-1536x1024-removebg-preview_1_x3d0sh.svg",
+    description: "",
+    year: "2024",
   },
   {
     id: 3,
-    name: "Apple",
-    logo: "/placeholder.svg?height=120&width=120",
-    description: "iOS App Development",
-    year: "2023",
+    name: "Learnable",
+    logo: "https://res.cloudinary.com/dyp8gtllq/image/upload/v1741910396/learnable-removebg-preview_1_zhslxr.svg",
+    description: "",
+    year: "2024",
   },
   {
     id: 4,
-    name: "Amazon",
-    logo: "/placeholder.svg?height=120&width=120",
-    description: "E-commerce Platform Integration",
-    year: "2021",
+    name: "Genesys",
+    logo: "https://res.cloudinary.com/dyp8gtllq/image/upload/v1741909471/genesys_tech_hub-removebg-preview_nmysqv.png",
+    description: "",
+    year: "2024",
   },
   {
     id: 5,
-    name: "Meta",
-    logo: "/placeholder.svg?height=120&width=120",
-    description: "Social Media Analytics Dashboard",
-    year: "2022",
+    name: "Serene",
+    logo: "https://res.cloudinary.com/dyp8gtllq/image/upload/v1741911483/serene_mbpg6c.png",
+    description: "",
+    year: "2024",
   },
   {
     id: 6,
@@ -134,8 +134,8 @@ export default function BrandShowcase() {
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        <div className="pointer-events-none absolute left-0 z-10 h-full w-32 bg-gradient-to-r from-background to-transparent" />
-        <div className="pointer-events-none absolute right-0 z-10 h-full w-32 bg-gradient-to-l from-background to-transparent" />
+        <div className="pointer-events-none absolute left-0 z-10 h-full w-8 md:w-32 bg-gradient-to-r from-background to-transparent" />
+        <div className="pointer-events-none absolute right-0 z-10 h-full w-8 md:w-32 bg-gradient-to-l from-background to-transparent" />
 
         <div
           ref={containerRef}
@@ -164,8 +164,8 @@ export default function BrandShowcase() {
                 <div
                   className={`absolute inset-0 transition-all duration-500 ${
                     hoveredId === brand.id
-                      ? "bg-foreground/20 backdrop-blur-md"
-                      : "bg-foreground/10 backdrop-blur-sm"
+                      ? "bg-foreground/10 backdrop-blur-md"
+                      : ""
                   }`}
                 />
 
