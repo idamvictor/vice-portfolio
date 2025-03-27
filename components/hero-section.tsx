@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 import {
-  CodeIcon,
+  // CodeIcon,
   LayoutIcon,
   ServerIcon,
   SmartphoneIcon,
@@ -18,8 +18,6 @@ import {
 import { SiSupabase } from "react-icons/si";
 import { TbBrandTypescript, TbBrandNextjs } from "react-icons/tb";
 import { FaReact } from "react-icons/fa";
-
-
 
 import { cn } from "@/lib/utils";
 import Link from "next/link";
