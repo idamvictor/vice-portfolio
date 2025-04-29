@@ -3,7 +3,7 @@
 import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Home, User, Code, Folder, Briefcase, Mail } from "lucide-react";
+import { Home, User, Code, Folder, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "./ModeToggle";
 
@@ -11,10 +11,10 @@ export default function Header() {
   const navItems = useMemo(
     () => [
       { name: "Home", url: "#home", icon: Home },
+      { name: "Portfolio", url: "#portfolio", icon: Folder },
       { name: "About", url: "#about", icon: User },
       { name: "Skills", url: "#skills", icon: Code },
-      { name: "Portfolio", url: "#portfolio", icon: Folder },
-      { name: "Experience", url: "#experience", icon: Briefcase },
+      // { name: "Experience", url: "#experience", icon: Briefcase },
       { name: "Contact", url: "#contact", icon: Mail },
     ],
     []
