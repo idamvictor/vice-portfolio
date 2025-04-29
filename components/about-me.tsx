@@ -128,13 +128,88 @@ export default function AboutMe() {
               <h2 className="text-3xl font-semibold mb-4 text-foreground">
                 About Me
               </h2>
-              <p className="text-muted-foreground">
-                I&apos;m a passionate developer with a keen eye for design. My
-                journey in tech started 5 years ago, and since then, I&apos;ve
-                been crafting digital experiences that blend functionality with
-                aesthetics. When I&apos;m not coding, you&apos;ll find me
-                exploring new coffee shops or hiking in nature.
-              </p>
+              <div className="space-y-6 text-muted-foreground">
+                <p className="text-lg font-medium">
+                  Frontend Developer | React & Next.js Specialist | High-Impact
+                  Problem Solver
+                </p>
+
+                <p>
+                  Hey there! 👋 I&apos;m Victor Idam, a First-Class Computer
+                  Science graduate and award-winning developer with a passion
+                  for crafting responsive, performant web applications that
+                  users love. My expertise lies in React, Next.js, TypeScript,
+                  and modern frontend ecosystems, but I thrive equally in
+                  full-stack environments (Supabase, REST/GraphQL).
+                </p>
+
+                <p>
+                  I bridge the gap between technical execution and business
+                  goals—whether it&apos;s leading teams to build award-winning
+                  products (like Serene, a mental health platform) or optimizing
+                  performance (40% faster load times, 30% higher engagement). My
+                  work is driven by a love for clean architecture, mentorship,
+                  and solving real-world problems through code.
+                </p>
+
+                <div className="mt-8">
+                  <h3 className="text-xl font-semibold mb-4 text-foreground">
+                    Why Work With Me?
+                  </h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-start space-x-2">
+                      <span className="font-semibold text-primary">
+                        Proven Impact:
+                      </span>
+                      <span>
+                        Delivered projects like SafeZone (e-commerce) and Quek
+                        (SaaS dashboard) with measurable results—faster load
+                        times, higher engagement, and scalable architectures.
+                      </span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <span className="font-semibold text-primary">
+                        Technical Depth:
+                      </span>
+                      <span>
+                        From state management (Redux/Zustand) to animations
+                        (Framer Motion) and backend integration (Supabase,
+                        GraphQL), I ensure robust, future-proof solutions.
+                      </span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <span className="font-semibold text-primary">
+                        Collaborative Leadership:
+                      </span>
+                      <span>
+                        Recognized as &quot;Most Dedicated Intern&quot; and
+                        &quot;Best Graduating Student&quot; for mentoring peers,
+                        leading agile teams, and aligning tech with user needs.
+                      </span>
+                    </li>
+                    <li className="flex items-start space-x-2">
+                      <span className="font-semibold text-primary">
+                        Continuous Learner:
+                      </span>
+                      <span>
+                        Always leveling up—whether through certifications
+                        (Genesys Tech Hub), open-source contributions, or diving
+                        into emerging tech.
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <p className="mt-6">
+                  When I&apos;m not coding, you&apos;ll find me contributing to
+                  tech communities, exploring UI/UX design trends, or
+                  brainstorming ways to make the web faster and more inclusive.
+                </p>
+
+                <p className="font-medium">
+                  Let&apos;s build something amazing together! 🚀
+                </p>
+              </div>
             </motion.div>
 
             <motion.div
@@ -229,8 +304,8 @@ export default function AboutMe() {
               <ul className="space-y-4">
                 {[
                   "JavaScript / TypeScript",
-                  "React & React Native",
-                  "Node.js",
+                  "React & NextJs",
+                  "Supabase",
                   "UI/UX Design",
                 ].map((skill, index) => (
                   <motion.li
