@@ -51,7 +51,10 @@ export default function AboutMe() {
   }, [controls, inView]);
 
   return (
-    <div id="about" className="min-h-screen bg-background text-foreground p-8 relative overflow-hidden">
+    <div
+      id="about"
+      className="min-h-screen bg-background text-foreground p-8 relative overflow-hidden"
+    >
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <motion.div
@@ -92,17 +95,17 @@ export default function AboutMe() {
             transition={{ type: "spring", stiffness: 300, damping: 10 }}
           >
             <Image
-              src="/placeholder.svg?height=150&width=150"
+              src="https://res.cloudinary.com/dyp8gtllq/image/upload/v1744069087/idam_3d_small_lb6fzg.png"
               width={150}
               height={150}
               alt="Your Name"
               className="rounded-full mx-auto mb-6 border-4 border-primary shadow-lg"
             />
           </motion.div>
-          <h1 className="text-5xl font-bold mb-4 text-foreground">Your Name</h1>
-          <p className="text-xl text-muted-foreground">
-            Full-Stack Developer & UI/UX Enthusiast
-          </p>
+          <h1 className="text-5xl font-bold mb-4 text-foreground">
+            Victor Idam
+          </h1>
+          <p className="text-xl text-muted-foreground">Front-End Developer </p>
         </motion.header>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

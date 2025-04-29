@@ -15,8 +15,8 @@ interface Brand {
 const brands: Brand[] = [
   {
     id: 1,
-    name: "Google",
-    logo: "https://res.cloudinary.com/dyp8gtllq/image/upload/v1740652807/Google_2011_logo-600x206_nilxnl.png",
+    name: "Bridged Connect",
+    logo: "https://res.cloudinary.com/dyp8gtllq/image/upload/v1745916598/image_qpggdp.png",
     description: "Search Engine Optimization Project",
     year: "2023",
   },

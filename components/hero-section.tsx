@@ -252,7 +252,7 @@ export default function HeroSection() {
                 />
                 <div className="relative z-10 h-full w-full overflow-hidden rounded-full bg-gradient-to-br from-muted to-muted">
                   <Image
-                    src="https://res.cloudinary.com/dyp8gtllq/image/upload/v1740645943/idam_3d_xkcafl.png"
+                    src="https://res.cloudinary.com/dyp8gtllq/image/upload/v1744069087/idam_3d_small_lb6fzg.png"
                     alt="Profile"
                     width={600}
                     height={600}
