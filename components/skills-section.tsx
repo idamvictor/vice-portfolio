@@ -17,7 +17,6 @@ import {
   Palette,
   Cpu,
   GitBranch,
-  TestTube,
   Box,
   Cloud,
   FileCode,
@@ -29,12 +28,9 @@ import {
   Clock,
   Shuffle,
   Users,
-  Lightbulb,
-  Search,
   ClipboardList,
   MessageSquare,
   GraduationCap,
-  Zap,
 } from "lucide-react";
 
 // Define skill types and interfaces
@@ -52,15 +48,16 @@ interface SkillCategory {
   skills: Skill[];
 }
 
-// Sample skills data with icons and colors
+// Updated skills data with additional skills
 const skillsData: SkillCategory[] = [
   {
     id: "hard-skills",
     label: "Hard Skills",
     icon: Code,
     skills: [
+      // Languages
       {
-        name: "JavaScript",
+        name: "JavaScript (ES6+)",
         icon: FileCode,
         category: "Languages",
         color: "bg-yellow-100 text-yellow-600",
@@ -83,23 +80,68 @@ const skillsData: SkillCategory[] = [
         category: "Languages",
         color: "bg-indigo-100 text-indigo-600",
       },
+      // Frontend Frameworks & Libraries
       {
         name: "React",
         icon: Code,
-        category: "Frameworks",
+        category: "Frontend Frameworks",
         color: "bg-cyan-100 text-cyan-600",
       },
       {
         name: "Next.js",
         icon: Layers,
-        category: "Frameworks",
+        category: "Frontend Frameworks",
         color: "bg-gray-100 text-gray-600",
       },
       {
-        name: "Node.js",
+        name: "Material-UI",
+        icon: Box,
+        category: "Frontend Frameworks",
+        color: "bg-blue-100 text-blue-600",
+      },
+      {
+        name: "Headless UI",
+        icon: Box,
+        category: "Frontend Frameworks",
+        color: "bg-gray-100 text-gray-600",
+      },
+      // State Management
+      {
+        name: "Redux Toolkit",
+        icon: Layers,
+        category: "State Management",
+        color: "bg-purple-100 text-purple-600",
+      },
+      {
+        name: "Zustand",
+        icon: Layers,
+        category: "State Management",
+        color: "bg-amber-100 text-amber-600",
+      },
+      {
+        name: "React Query",
+        icon: Layers,
+        category: "State Management",
+        color: "bg-red-100 text-red-600",
+      },
+      {
+        name: "Context API",
+        icon: Layers,
+        category: "State Management",
+        color: "bg-green-100 text-green-600",
+      },
+      // Backend & APIs
+      {
+        name: "Supabase",
         icon: Server,
         category: "Backend",
         color: "bg-green-100 text-green-600",
+      },
+      {
+        name: "Firebase",
+        icon: Server,
+        category: "Backend",
+        color: "bg-yellow-100 text-yellow-600",
       },
       {
         name: "GraphQL",
@@ -108,22 +150,55 @@ const skillsData: SkillCategory[] = [
         color: "bg-pink-100 text-pink-600",
       },
       {
-        name: "REST API Design",
+        name: "tRPC",
+        icon: Server,
+        category: "Backend",
+        color: "bg-blue-100 text-blue-600",
+      },
+      {
+        name: "REST APIs",
         icon: Globe,
         category: "Backend",
         color: "bg-violet-100 text-violet-600",
       },
+      // Authentication
+      {
+        name: "Clerk",
+        icon: Database,
+        category: "Authentication",
+        color: "bg-pink-100 text-pink-600",
+      },
+      {
+        name: "NextAuth.js",
+        icon: Database,
+        category: "Authentication",
+        color: "bg-green-100 text-green-600",
+      },
+      {
+        name: "OAuth/JWT",
+        icon: Database,
+        category: "Authentication",
+        color: "bg-blue-100 text-blue-600",
+      },
+      // Database
+      {
+        name: "PostgreSQL",
+        icon: Database,
+        category: "Database",
+        color: "bg-blue-100 text-blue-600",
+      },
+      {
+        name: "MongoDB",
+        icon: Database,
+        category: "Database",
+        color: "bg-green-100 text-green-600",
+      },
+      // Frontend Skills
       {
         name: "Responsive Design",
         icon: Layout,
         category: "Frontend",
         color: "bg-teal-100 text-teal-600",
-      },
-      {
-        name: "Accessibility",
-        icon: Layout,
-        category: "Frontend",
-        color: "bg-emerald-100 text-emerald-600",
       },
       {
         name: "Performance Optimization",
@@ -132,16 +207,16 @@ const skillsData: SkillCategory[] = [
         color: "bg-amber-100 text-amber-600",
       },
       {
-        name: "SQL",
-        icon: Database,
-        category: "Database",
-        color: "bg-blue-100 text-blue-600",
+        name: "Cross-Browser Compatibility",
+        icon: Globe,
+        category: "Frontend",
+        color: "bg-purple-100 text-purple-600",
       },
       {
-        name: "NoSQL",
-        icon: Database,
-        category: "Database",
-        color: "bg-green-100 text-green-600",
+        name: "WCAG Accessibility",
+        icon: Users,
+        category: "Frontend",
+        color: "bg-emerald-100 text-emerald-600",
       },
     ],
   },
@@ -157,10 +232,14 @@ const skillsData: SkillCategory[] = [
       },
       {
         name: "Communication",
-        icon: Globe,
+        icon: MessageSquare,
         color: "bg-blue-100 text-blue-600",
       },
-      { name: "Teamwork", icon: Users, color: "bg-green-100 text-green-600" },
+      {
+        name: "Teamwork",
+        icon: Users,
+        color: "bg-green-100 text-green-600",
+      },
       {
         name: "Time Management",
         icon: Clock,
@@ -172,35 +251,29 @@ const skillsData: SkillCategory[] = [
         color: "bg-teal-100 text-teal-600",
       },
       {
-        name: "Critical Thinking",
+        name: "Leadership",
+        icon: Users,
+        color: "bg-red-100 text-red-600",
+      },
+      {
+        name: "Emotional Intelligence",
         icon: Brain,
         color: "bg-indigo-100 text-indigo-600",
       },
-      { name: "Leadership", icon: Users, color: "bg-red-100 text-red-600" },
       {
-        name: "Creativity",
-        icon: Lightbulb,
-        color: "bg-yellow-100 text-yellow-600",
-      },
-      {
-        name: "Attention to Detail",
-        icon: Search,
-        color: "bg-cyan-100 text-cyan-600",
-      },
-      {
-        name: "Project Management",
+        name: "Agile/Scrum",
         icon: ClipboardList,
         color: "bg-violet-100 text-violet-600",
       },
       {
-        name: "Client Communication",
-        icon: MessageSquare,
-        color: "bg-blue-100 text-blue-600",
-      },
-      {
-        name: "Mentoring",
+        name: "Technical Mentoring",
         icon: GraduationCap,
         color: "bg-emerald-100 text-emerald-600",
+      },
+      {
+        name: "Cross-functional Collaboration",
+        icon: Users,
+        color: "bg-blue-100 text-blue-600",
       },
     ],
   },
@@ -209,6 +282,7 @@ const skillsData: SkillCategory[] = [
     label: "Tools & Libraries",
     icon: Wrench,
     skills: [
+      // Version Control & Deployment
       {
         name: "Git/GitHub",
         icon: GitBranch,
@@ -218,51 +292,29 @@ const skillsData: SkillCategory[] = [
       {
         name: "VS Code",
         icon: Code,
-        category: "IDE",
+        category: "Development Tools",
         color: "bg-blue-100 text-blue-600",
       },
       {
-        name: "Webpack",
+        name: "Vercel",
+        icon: Cloud,
+        category: "Deployment",
+        color: "bg-gray-100 text-gray-600",
+      },
+      {
+        name: "Netlify",
+        icon: Cloud,
+        category: "Deployment",
+        color: "bg-cyan-100 text-cyan-600",
+      },
+      // Package Managers & Build Tools
+      {
+        name: "npm/yarn",
         icon: Box,
-        category: "Build Tools",
-        color: "bg-blue-100 text-blue-600",
-      },
-      {
-        name: "Vite",
-        icon: Zap,
-        category: "Build Tools",
-        color: "bg-purple-100 text-purple-600",
-      },
-      {
-        name: "Jest",
-        icon: TestTube,
-        category: "Testing",
+        category: "Package Managers",
         color: "bg-red-100 text-red-600",
       },
-      {
-        name: "React Testing Library",
-        icon: TestTube,
-        category: "Testing",
-        color: "bg-red-100 text-red-600",
-      },
-      {
-        name: "Cypress",
-        icon: TestTube,
-        category: "Testing",
-        color: "bg-green-100 text-green-600",
-      },
-      {
-        name: "Redux",
-        icon: Layers,
-        category: "State Management",
-        color: "bg-purple-100 text-purple-600",
-      },
-      {
-        name: "Zustand",
-        icon: Layers,
-        category: "State Management",
-        color: "bg-amber-100 text-amber-600",
-      },
+      // UI Libraries & Styling
       {
         name: "Tailwind CSS",
         icon: Palette,
@@ -270,7 +322,19 @@ const skillsData: SkillCategory[] = [
         color: "bg-cyan-100 text-cyan-600",
       },
       {
-        name: "Styled Components",
+        name: "ShadCN/ui",
+        icon: Palette,
+        category: "Styling",
+        color: "bg-gray-100 text-gray-600",
+      },
+      {
+        name: "CSS Modules",
+        icon: Palette,
+        category: "Styling",
+        color: "bg-blue-100 text-blue-600",
+      },
+      {
+        name: "SCSS",
         icon: Palette,
         category: "Styling",
         color: "bg-pink-100 text-pink-600",
@@ -282,34 +346,17 @@ const skillsData: SkillCategory[] = [
         color: "bg-indigo-100 text-indigo-600",
       },
       {
+        name: "AOS",
+        icon: Box,
+        category: "Animation",
+        color: "bg-purple-100 text-purple-600",
+      },
+      // Design Tools
+      {
         name: "Figma",
         icon: Figma,
         category: "Design",
         color: "bg-violet-100 text-violet-600",
-      },
-      {
-        name: "Docker",
-        icon: Box,
-        category: "DevOps",
-        color: "bg-blue-100 text-blue-600",
-      },
-      {
-        name: "AWS",
-        icon: Cloud,
-        category: "Cloud",
-        color: "bg-orange-100 text-orange-600",
-      },
-      {
-        name: "Firebase",
-        icon: Server,
-        category: "Backend Services",
-        color: "bg-yellow-100 text-yellow-600",
-      },
-      {
-        name: "Supabase",
-        icon: Database,
-        category: "Backend Services",
-        color: "bg-green-100 text-green-600",
       },
     ],
   },
