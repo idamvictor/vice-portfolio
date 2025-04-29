@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Hexagon, Github, Twitter } from "lucide-react";
+import { Hexagon, Github, Twitter, Linkedin, Instagram } from "lucide-react";
 import Link from "next/link";
 import type * as React from "react";
 
@@ -40,6 +40,16 @@ const defaultFooterData = {
       href: "https://github.com",
       label: "GitHub",
     },
+    {
+      icon: <Linkedin className="h-5 w-5" />,
+      href: "https://www.linkedin.com/in/victor-idam/",
+      label: "LinkedIn",
+    },
+    {
+      icon: <Instagram className="h-5 w-5" />,
+      href: "https://www.instagram.com/idamvictorx1/",
+      label: "Instagram",
+    },
   ],
   mainLinks: [
     { href: "/products", label: "Products" },
@@ -58,8 +68,6 @@ const defaultFooterData = {
 };
 
 export function Footer({
-  logo = defaultFooterData.logo,
-  brandName = defaultFooterData.brandName,
   socialLinks = defaultFooterData.socialLinks,
   mainLinks = defaultFooterData.mainLinks,
   legalLinks = defaultFooterData.legalLinks,
@@ -69,13 +77,8 @@ export function Footer({
     <footer className="pb-6 pt-16 lg:pb-8 lg:pt-24">
       <div className="px-4 lg:px-8">
         <div className="md:flex md:items-start md:justify-between">
-          <Link
-            href="/"
-            className="flex items-center gap-x-2"
-            aria-label={brandName}
-          >
-            {logo}
-            <span className="font-bold text-xl">{brandName}</span>
+          <Link href="/" className="text-2xl font-bold">
+            Vice<span className="text-primary">.</span>
           </Link>
           <ul className="flex list-none mt-6 md:mt-0 space-x-3">
             {socialLinks.map((link, i) => (
